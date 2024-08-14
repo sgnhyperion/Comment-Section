@@ -23,6 +23,7 @@ function CommentForm({ addComment }) {
 
   return (
     <form onSubmit={handleSubmit} className="comment-form clearfix">
+      <h2>Comment</h2>
       <input
         type="text"
         placeholder="Name"

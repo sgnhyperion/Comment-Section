@@ -25,7 +25,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Comments Section</h1>
       <CommentForm addComment={addComment} />
       <button className="sort-btn" onClick={sortComments}>Sort by Date and Time</button>
       <CommentList comments={comments} setComments={setComments} />
