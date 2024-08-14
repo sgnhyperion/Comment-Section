@@ -172,3 +172,29 @@ body {
   clear: both;
   display: table;
 }
+
+/* General button styling */
+.comment-action-btn {
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comment-action-btn:hover {
+  opacity: 0.8;
+}
+
+/* Edit button specific styling */
+.edit-btn {
+  background-color: #f0ad4e; /* Bootstrap's button-warning color */
+  color: white;
+}
+
+/* Reply button specific styling */
+.reply-btn {
+  background-color: #5bc0de; /* Bootstrap's button-info color */
+  color: white;
+}

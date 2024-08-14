@@ -5,11 +5,9 @@ import { format } from 'date-fns';
 function Comment({ comment, comments, setComments, isReply = false }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState(comment.text);
+  const [showReplyForm, setShowReplyForm] = useState(false);
 
-  const handleEdit = () => {
-    setIsEditing(true);
-  };
-
+  
   const handleSave = () => {
     setComments(
       comments.map((c) =>
@@ -18,9 +16,13 @@ function Comment({ comment, comments, setComments, isReply = false }) {
     );
     setIsEditing(false);
   };
-
+  
   const handleDelete = () => {
     setComments(comments.filter((c) => c.id !== comment.id));
+  };
+  
+  const handleEdit = () => {
+    setIsEditing(true);
   };
 
   const addReply = (newReply) => {
@@ -55,8 +57,13 @@ function Comment({ comment, comments, setComments, isReply = false }) {
       </button>
       {!isReply && (
         <>
-          <h4>Reply to this comment:</h4>
-          <ReplyForm addReply={addReply} />
+          <button onClick={() => setShowReplyForm(!showReplyForm)}>Reply</button>
+          {showReplyForm && (
+            <ReplyForm
+              addReply={addReply}
+              onReplyPosted={() => setShowReplyForm(false)}
+            />
+          )}
         </>
       )}
       {comment.replies && comment.replies.map((reply) => (

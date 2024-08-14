@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 
-function ReplyForm({ addReply }) {
+function ReplyForm({ addReply, onReplyPosted }) {
   const [name, setName] = useState('');
   const [replyText, setReplyText] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!name.trim() || !replyText.trim()) {
+      alert("Both name and comment are required.");
+      return;
+    }
     if (name.trim() && replyText.trim()) {
       addReply({
         name,
@@ -16,6 +20,7 @@ function ReplyForm({ addReply }) {
       setName('');
       setReplyText('');
     }
+    onReplyPosted();
   };
 
   return (
