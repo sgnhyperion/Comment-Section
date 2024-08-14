@@ -98,22 +98,17 @@ body {
 }
 
 button{
-  background-color: #4285f4;
-  color: white;
-  border: none;
-  padding: 10px;
+  color: #4285f4;
   margin: 5px;
-  border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
-  float: right;
 }
 
 .delete-btn {
   position: absolute;
-  top: -10px;
-  right: -10px;
-  background-color: #ea4335;
+  /* top: -10px; */
+  transform: translate(0, -300%);
+  right: -17px;
+  background-color: #2c2a2a;
   color: white;
   border: none;
   border-radius: 50%;
@@ -157,7 +152,6 @@ button{
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
-  float: right;
 }
 
 .reply-form button:hover {

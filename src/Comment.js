@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReplyForm from './ReplyForm';
 import { format } from 'date-fns';
+import { AiTwotoneDelete } from "react-icons/ai";
 
 function Comment({ comment, comments, setComments, isReply = false }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -53,7 +54,7 @@ function Comment({ comment, comments, setComments, isReply = false }) {
         <button onClick={handleEdit}>Edit</button>
       )}
       <button className="delete-btn" onClick={handleDelete}>
-        X
+      <AiTwotoneDelete />
       </button>
       {!isReply && (
         <>
