@@ -103,6 +103,13 @@ button{
   cursor: pointer;
 }
 
+#name{
+  width: 95%;
+}
+#comment{
+  width: 95%;
+}
+
 .delete-btn {
   position: absolute;
   /* top: -10px; */

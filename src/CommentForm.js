@@ -30,12 +30,14 @@ function CommentForm({ addComment }) {
         value={name}
         onChange={(e) => setName(e.target.value)}
         required
+        id='name'
       />
       <textarea
         placeholder="Comment"
         value={commentText}
         onChange={(e) => setCommentText(e.target.value)}
         required
+        id='comment'
       />
       <button type="submit">POST</button>
     </form>
